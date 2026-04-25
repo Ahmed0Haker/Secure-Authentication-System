@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Login</h1>
+      <p>Step 1: Email + password</p>
+
+      <% if (error) { %>
+      <p class="error"><%= error %></p>
+      <% } %>
+
+      <form action="/login" method="post" class="card">
+        <label>Email</label>
+        <input type="email" name="email" required />
+
+        <label>Password</label>
+        <input type="password" name="password" required />
+
+        <button type="submit">Continue to 2FA</button>
+      </form>
+
+      <p><a href="/register">Create new account</a></p>
+    </main>
+  </body>
+</html>

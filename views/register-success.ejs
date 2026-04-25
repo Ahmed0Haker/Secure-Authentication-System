@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Complete</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Registration Successful</h1>
+      <p>User created and password stored as hash in DB.</p>
+
+      <div class="card">
+        <p><strong>User ID:</strong> <%= userId %></p>
+        <p><strong>Name:</strong> <%= name %></p>
+        <p><strong>Email:</strong> <%= email %></p>
+        <p><strong>Role:</strong> <%= role %></p>
+      </div>
+
+      <h2>2FA Setup</h2>
+      <p>Scan this QR code with Google Authenticator / Authy / Microsoft Authenticator.</p>
+      <img src="<%= qrCodeDataUrl %>" alt="2FA QR code" class="qr" />
+      <p><strong>Manual key:</strong> <code><%= manualKey %></code></p>
+
+      <p><a href="/login">Continue to Login</a></p>
+    </main>
+  </body>
+</html>

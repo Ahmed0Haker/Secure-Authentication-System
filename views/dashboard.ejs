@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Dashboard</h1>
+      <p>Welcome, <strong><%= currentUser.name %></strong> (<%= currentUser.role %>)</p>
+
+      <div class="card">
+        <p><strong>Token (from request):</strong></p>
+        <textarea readonly rows="6"><%= token %></textarea>
+      </div>
+
+      <div class="card">
+        <h2>Protected Pages</h2>
+        <p><a href="/admin">Admin Page (Admin only)</a></p>
+        <p><a href="/manager">Manager Page (Manager only)</a></p>
+        <p><a href="/profile">Profile Page (User only)</a></p>
+        <p><a href="/user">User Page (User only)</a></p>
+      </div>
+
+      <div class="card">
+        <h2>Registered Users (DB)</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% users.forEach(function(user) { %>
+            <tr>
+              <td><%= user.id %></td>
+              <td><%= user.name %></td>
+              <td><%= user.email %></td>
+              <td><%= user.role %></td>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+
+      <form action="/logout" method="post" class="inline-form">
+        <button type="submit">Logout</button>
+      </form>
+    </main>
+  </body>
+</html>
