@@ -47,3 +47,5 @@ Assignment 2 implementation for Data Integrity and Authentication.
 6. Access protected routes.
 7. Demonstrate all three roles.
 8. Demonstrate blocked access for unauthorized role.
+
+-----------------------------------
